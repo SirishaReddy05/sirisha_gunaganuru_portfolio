@@ -3,6 +3,7 @@ import { ArrowUp } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { personalInfo } from '../data/data';
 
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
