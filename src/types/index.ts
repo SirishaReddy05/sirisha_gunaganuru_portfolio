@@ -13,7 +13,7 @@ export type Project = {
 
 export type Skill = {
   name: string;
-  proficiency: number; // 0-100
+  proficiency: number;
   logo: string;
   description?: string;
 };

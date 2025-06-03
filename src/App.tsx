@@ -12,14 +12,12 @@ import Footer from './components/Footer';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Check for user preference on initial render
   useEffect(() => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkMode(true);
     }
   }, []);
 
-  // Update body class when darkMode changes
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
