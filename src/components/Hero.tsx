@@ -9,11 +9,11 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-blue-900"
+      className="min-h-screen flex items-center relative bg-gradient-to-br from-primary-50/50 to-accent-50/50 dark:from-secondary-900 dark:to-primary-900/20"
     >
-      <div className="absolute inset-0 opacity-10 dark:opacity-20">
-        <div className="absolute w-96 h-96 rounded-full bg-blue-300 dark:bg-blue-700 blur-3xl -top-20 -left-20"></div>
-        <div className="absolute w-96 h-96 rounded-full bg-teal-300 dark:bg-teal-700 blur-3xl bottom-10 -right-20"></div>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute w-96 h-96 rounded-full bg-primary-300 dark:bg-primary-700 blur-3xl -top-20 -left-20"></div>
+        <div className="absolute w-96 h-96 rounded-full bg-accent-300 dark:bg-accent-700 blur-3xl bottom-10 -right-20"></div>
       </div>
       
       <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between relative z-10">
@@ -23,11 +23,11 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-            Hi, I'm {personalInfo.name}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
           </h1>
           
-          <div className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-6 h-16">
+          <div className="text-xl md:text-2xl font-medium text-secondary-600 dark:text-secondary-300 mb-6 h-16">
             <TypeAnimation
               sequence={[
                 'Web Developer',
@@ -42,11 +42,11 @@ const Hero: React.FC = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-blue-700 dark:text-blue-400"
+              className="text-primary-600 dark:text-primary-400"
             />
           </div>
           
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+          <p className="text-lg text-secondary-600 dark:text-secondary-300 mb-8 max-w-lg mx-auto md:mx-0">
             {personalInfo.shortBio}
           </p>
           
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
               href={personalInfo.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"
+              className="btn btn-primary flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FileText className="w-5 h-5" />
               <span>View Resume</span>
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="px-8 py-3 bg-transparent border-2 border-blue-700 dark:border-blue-500 text-blue-700 dark:text-blue-400 hover:bg-blue-700 hover:text-white dark:hover:bg-blue-600 rounded-lg flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"
+              className="btn btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FolderKanban className="w-5 h-5" />
               <span>Explore Projects</span>
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-lg flex items-center justify-center gap-2 transition-colors w-full sm:w-auto"
+              className="btn btn-accent flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <Mail className="w-5 h-5" />
               <span>Get in Touch</span>
@@ -93,12 +93,12 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 blur-lg opacity-70 animate-pulse"></div>
+          <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 animate-float">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 blur-lg opacity-70"></div>
             <img 
               src={personalInfo.photo} 
               alt={personalInfo.name}
-              className="relative w-full h-full object-cover rounded-full p-2 bg-white dark:bg-gray-800"
+              className="relative w-full h-full object-cover rounded-full p-2 bg-white dark:bg-secondary-800 shadow-glow"
             />
           </div>
         </motion.div>
@@ -116,8 +116,8 @@ const Hero: React.FC = () => {
           repeatDelay: 0.2
         }}
       >
-        <p className="text-gray-600 dark:text-gray-400 mb-2">Scroll Down</p>
-        <ArrowDown className="w-6 h-6 text-blue-700 dark:text-blue-400" />
+        <p className="text-secondary-600 dark:text-secondary-400 mb-2">Scroll Down</p>
+        <ArrowDown className="w-6 h-6 text-primary-600 dark:text-primary-400" />
       </motion.div>
     </section>
   );
